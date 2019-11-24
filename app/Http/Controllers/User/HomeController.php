@@ -13,7 +13,7 @@ class HomeController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(Request $request) {
-    	$data['page_title'] = "UPVC Home";
-    	return view('users.home', $data);
+    	$data['title'] = "UPVC Home";
+    	return view('users.pages.home', $data);
     }
 }
