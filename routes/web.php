@@ -21,3 +21,11 @@ Route::any('/checklogin', 'Auth\LoginController@login')->name('admin.checklogin'
 Route::any('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
+
+Route::any('/category', 'Admin\CategoryController@index')->name('admin.category');
+Route::any('/category/add/{id}', 'Admin\CategoryController@addEdit')->name('admin.category.add');
+Route::any('/category/update/{id}', 'Admin\CategoryController@update')->name('admin.category.update');
+
+Route::any('/subcategory', 'Admin\SubCategoryController@index')->name('admin.sub_category');
+Route::any('/subcategory/add/{id}', 'Admin\SubCategoryController@addEdit')->name('admin.sub_category.add');
+Route::any('/subcategory/update/{id}', 'Admin\SubCategoryController@update')->name('admin.sub_category.update');

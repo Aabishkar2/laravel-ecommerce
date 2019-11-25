@@ -9,32 +9,22 @@
         <!-- <li class="nav-title">Profile</li> -->
         <li class="nav-item">
           <a class="nav-link" href="">
-              <i class="nav-icon fa fa-users"></i>Menus
+              <i class="nav-icon fa fa-users"></i>Orders
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('admin.category') }}">
+              <i class="nav-icon fa fa-users"></i>Categories
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('admin.sub_category') }}">
+              <i class="nav-icon fa fa-users"></i>Sub Categories
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="">
-              <i class="nav-icon fa fa-users"></i>Posts
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">
-              <i class="nav-icon fa fa-users"></i>Comments
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">
-              <i class="nav-icon fa fa-users"></i>Social Media
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">
-              <i class="nav-icon fa fa-users"></i>Writers
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">
-              <i class="nav-icon fa fa-users"></i>Ads
+              <i class="nav-icon fa fa-users"></i>Products
           </a>
         </li>
         </ul>

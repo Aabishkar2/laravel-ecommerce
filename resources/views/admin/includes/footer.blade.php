@@ -1,6 +1,6 @@
 <footer class="app-footer">
         <div>
-          <a href="#">Sahitya Nepal</a>
+          <a href="#">UPVC</a>
           <span>&copy; 2019.</span>
         </div>
         <div class="ml-auto">
