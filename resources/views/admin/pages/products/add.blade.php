@@ -12,6 +12,7 @@
 @push('scripts')
 <script src="{{ asset ('/coreui/plugins/validate/jquery.validate.js') }}" type="text/javascript"></script>
 <script src="{{ asset ('/coreui/plugins/validate/validation.js') }}" type="text/javascript"></script>
+<script src="{{ asset ('/js/jquery.chained.js') }}" type="text/javascript"></script>
 <script src="{{ asset ('/js/ckeditor.js') }}" type="text/javascript"></script>
 <script>
     ClassicEditor
@@ -19,6 +20,9 @@
         .catch( error => {
             console.error( error );
         } );
+</script>
+<script>
+    $("#sub_categories").chained("#categories");
 </script>
 @endpush
 
@@ -82,6 +86,33 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
+                                                    <label for="ccnumber">Category</label>
+                                                    <select class="form-control" name="category" id="categories" required>
+                                                        @foreach ($categories as $row)
+                                                            <option value="{{ $row->id }}" @if(@$data_value->category_id == $row->id) selected @endif>{{ $row->name }}</option>
+                                                        @endforeach 
+                                                    </select>                                               </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="ccnumber">Sub Category</label>
+                                                    <select class="form-control" name="sub_category" id="sub_categories" required>
+                                                        @foreach ($sub_categories as $row)
+                                                            <option class="{{ $row->category_id }}" value="{{ $row->id }}" @if(@$data_value->sub_category_id == $row->id) selected @endif>{{ $row->name }}</option>
+                                                        @endforeach 
+                                                    </select>                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <!-- fourth row -->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
                                                     <label for="ccnumber">Actual Price (Rs.)</label>
                                                     <input class="form-control" name="actual_price" type="number" value="{{ @$data_value->actual_price }}" required>
                                                 </div>
@@ -95,7 +126,7 @@
                                         </div>
                                     </div>
                                 </div>    
-                                <!-- fourth row  -->
+                                <!-- fifth row  -->
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="row">
@@ -106,6 +137,13 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
+                                                    @if(@$data_value->image)
+                                                        <img src="{{ asset('/uploads/product/'.@$data_value->image) }}" width="400" height="400">
+                                                    @else
+                                                        <br />
+                                                        <br />
+                                                        <p>No image selected</p>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>

@@ -23,7 +23,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">
+          <a class="nav-link" href="{{ route('admin.product') }}">
               <i class="nav-icon fa fa-users"></i>Products
           </a>
         </li>
