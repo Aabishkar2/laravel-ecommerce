@@ -1,7 +1,6 @@
 @extends('admin.layouts.app')
 
 @push('stylesheets')
-<link href="{{ asset('/css/croppie.min.css') }}" rel="stylesheet" type="text/css">
 <style>
     label {
         color: #333 !important;
@@ -13,23 +12,6 @@
 @push('scripts')
 <script src="{{ asset ('/coreui/plugins/validate/jquery.validate.js') }}" type="text/javascript"></script>
 <script src="{{ asset ('/coreui/plugins/validate/validation.js') }}" type="text/javascript"></script>
-<script src="{{ asset ('/js/croppie.min.js') }}" type="text/javascript"></script>
-<script>
-$().ready(function() {
-    $uploadCrop = $('#').croppie({
-        enableExif: true,
-        viewport: {
-            width: 200,
-            height: 200,
-            type: 'circle'
-        },
-        boundary: {
-            width: 300,
-            height: 300
-        }
-    });
-});
-</script>
 @endpush
 
 @section('content')

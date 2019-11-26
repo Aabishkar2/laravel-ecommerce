@@ -11,6 +11,7 @@
         <div id="">
             @include('users/includes/head')
             @include('users/includes/body')
+            @include('users/includes/featured')
             @include('users/includes/footer')
         </div>
             @include('users/includes/scripts')

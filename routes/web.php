@@ -29,3 +29,7 @@ Route::any('/category/update/{id}', 'Admin\CategoryController@update')->name('ad
 Route::any('/subcategory', 'Admin\SubCategoryController@index')->name('admin.sub_category');
 Route::any('/subcategory/add/{id}', 'Admin\SubCategoryController@addEdit')->name('admin.sub_category.add');
 Route::any('/subcategory/update/{id}', 'Admin\SubCategoryController@update')->name('admin.sub_category.update');
+
+Route::any('/product', 'Admin\ProductController@index')->name('admin.product');
+Route::any('/product/add/{id}', 'Admin\ProductController@addEdit')->name('admin.product.add');
+Route::any('/product/update/{id}', 'Admin\ProductController@update')->name('admin.product.update');

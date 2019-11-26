@@ -19,7 +19,7 @@ class CategoryController extends Controller
     public function index() {
         $data['pageHeading'] = "Category Management";
         $data['title'] = 'Category Management';
-        $data['data'] = Category::where('status','1')->orderBy('id','asc')->get();
+        $data['data'] = Category::orderBy('id','asc')->get();
         return view('admin.pages.categories.index', $data);
     }
 
