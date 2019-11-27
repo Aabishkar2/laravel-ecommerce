@@ -12,6 +12,8 @@
 */
 
 Route::any('/', 'User\HomeController@index')->name('user.home');
+Route::any('/product/{id}', 'User\HomeController@product')->name('user.product');
+
 
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -33,3 +35,4 @@ Route::any('/subcategory/update/{id}', 'Admin\SubCategoryController@update')->na
 Route::any('/product', 'Admin\ProductController@index')->name('admin.product');
 Route::any('/product/add/{id}', 'Admin\ProductController@addEdit')->name('admin.product.add');
 Route::any('/product/update/{id}', 'Admin\ProductController@update')->name('admin.product.update');
+

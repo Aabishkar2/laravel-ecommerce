@@ -6,15 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> {{ @$title }} </title>
         @include('users/includes/css')
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/product_styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/product_responsive.css') }}">
     </head>
     <body>
         <div id="">
-            @include('users/includes/head')
-            @include('users/includes/body')
-            @include('users/includes/featured')
-            @include('users/includes/brands')
+            @include('users/includes/singleproduct')
+            @include('users/includes/similarproduct')
             @include('users/includes/footer')
         </div>
             @include('users/includes/scripts')
+            <script src="{{ asset('js/product_custom.js') }}"></script>
     </body>
 </html>

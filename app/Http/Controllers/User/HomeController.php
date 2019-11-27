@@ -17,4 +17,11 @@ class HomeController extends BaseController
     	$data['title'] = "UPVC Home";
     	return view('users.pages.home', $data);
     }
+
+    public function product(Request $request, $id) {
+    	$data['title'] = $request->id." Single Product";
+    	return view('users.pages.product', $data);
+    }
+
+    
 }
