@@ -23,5 +23,10 @@ class HomeController extends BaseController
     	return view('users.pages.product', $data);
     }
 
+    public function categoryProduct(Request $request, $id) {
+        $data['title'] = $request->id."Categories Product";
+    	return view('users.pages.product', $data);
+    }
+
     
 }
