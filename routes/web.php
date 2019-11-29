@@ -12,7 +12,8 @@
 */
 
 Route::any('/', 'User\HomeController@index')->name('user.home');
-Route::any('/product/{id}', 'User\HomeController@product')->name('user.product');
+Route::any('/shop/product/{id}', 'User\HomeController@product')->name('user.product');
+Route::any('/shop/{cat}/{id}', 'User\HomeController@categoryProduct')->name('user.category');
 
 
 

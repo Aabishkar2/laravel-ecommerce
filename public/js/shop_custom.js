@@ -32,11 +32,11 @@ $(document).ready(function()
 
 	setHeader();
 
-	initCustomDropdown();
+	// initCustomDropdown();
 	initPageMenu();
 	initViewedSlider();
 	initBrandsSlider();
-	initIsotope();
+	// initIsotope();
 	initPriceSlider();
 	initFavs();
 
