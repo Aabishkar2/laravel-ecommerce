@@ -8,6 +8,9 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Admin\SubCategory;
+use App\Models\User\Cart;
+
+use Session;
 use DB;
 
 class HomeController extends BaseController
@@ -40,6 +43,19 @@ class HomeController extends BaseController
         }
         
     	return view('users.pages.category', $data);
+    }
+
+    public function addtoCart(Request $request) {
+        $id = $request->id;
+        $item = $request->item;
+        $session_id = Session::getId();
+        $cart = new Cart;
+        $cart->product_id = $id;
+        $cart->item = $item;
+        $cart->session_id = $session_id;
+        $cart->status = $request->status;      
+        $cart->save();
+        return redirect()->back()->with('success', ['Item added to the cart']);
     }
 
     
