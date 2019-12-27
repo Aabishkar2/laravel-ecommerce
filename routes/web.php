@@ -22,6 +22,8 @@ Route::any('/product/addtocart', 'User\HomeController@addtoCart')->name('user.pr
 Route::any('/admin', 'Auth\LoginController@showLoginForm')->name('admin.login');
 Route::any('/checklogin', 'Auth\LoginController@login')->name('admin.checklogin');
 Route::any('logout', 'Auth\LoginController@logout')->name('logout');
+Route::any('register', 'Auth\LoginController@register')->name('register');
+
 
 Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
 

@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            @if(count($data) > 0)
+                            @if(count(@$data) > 0)
                             <table class="table table-responsive-sm table-hover table-outline mb-0">
                                 <thead class="thead-light">
                                     <tr>
