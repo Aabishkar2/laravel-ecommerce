@@ -25,7 +25,7 @@
     var i = 1;
     function addRow() {
         this.i = this.i + 1;
-        $("#iteniaryTable").append('<tr id="'+this.i+'"><td><input name="day[]"  type="number" class="form-control" value="" placeholder="1" /></td><td><input name="detail[]"  type="text" class="form-control" value="" placeholder="Details for the day" /></td><td><input type="button" class="btn btn-danger" value="-" onclick="removeRow('+this.i+')"></td></tr>');
+        $("#iteniaryTable").append('<tr id="'+this.i+'"><td><input name="day[]"  type="number" class="form-control" value="" placeholder="Day" /></td><td><input name="day_detail[]"  type="text" class="form-control" value="" placeholder="Details for the day" /></td><td><input type="button" class="btn btn-danger" value="-" onclick="removeRow('+this.i+')"></td></tr>');
     }
     function removeRow(id) {
         $('#'+id).remove();
@@ -114,8 +114,8 @@
                                                 <th width="1%"></th>
                                               </tr>
                                               <tr>
-                                                <td><input name="day[]"  type="number" class="form-control" value="" placeholder="1" /></td>
-                                                <td><input name="detail[]"  type="text" class="form-control" value="" placeholder="Details for the day" /></td>
+                                                <td><input name="day[]"  type="number" class="form-control" value="" placeholder="Day" /></td>
+                                                <td><input name="day_detail[]"  type="text" class="form-control" value="" placeholder="Details for the day" /></td>
                                                 <td><input type="button" class="btn btn-danger" value="-" onclick="removeRow('1')"></td>
                                               </tr>
                                             </table>

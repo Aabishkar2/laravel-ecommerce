@@ -1,8 +1,25 @@
-<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap4/bootstrap.min.css') }}">
-<link href="{{ asset('plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') }}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/slick-1.8.0/slick.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/min/bootstrap.min.css') }}" media="all" >
+<link rel="stylesheet" href="{{ asset('assets/css/jqueryui.css') }}" media="all" >
+<link rel="stylesheet" href="{{ asset('vendor/animate-css/animate.css') }}" media="all" >
+<link rel="stylesheet" href="{{ asset('assets/font/iconfont/iconstyle.css') }}" media="all" >
+<link rel="stylesheet" href="{{ asset('assets/font/font-awesome/css/font-awesome.css') }}" media="all" >
+<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" media="all"  id="maincss">
+<style>
+		.banner-image {
+			    background-image: url("{{ asset('assets/img/coast/everest.jpg') }}") 
+		}
+</style>
+<script src="{{ asset('vendor/js-cookie/src/js.cookie.js') }}"></script>
+
+<style id="moldcustomize">
+</style>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83435216-1', 'auto');
+    ga('send', 'pageview');
+</script>

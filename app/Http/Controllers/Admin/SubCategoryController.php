@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\SubCategory;
+use App\Models\Admin\Detail;
 use DB;
 
 use Auth;
@@ -16,7 +17,8 @@ class SubCategoryController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
+    public function index() 
+    {
         $data['pageHeading'] = "Sub-Category Management";
         $data['title'] = 'Sub-Category Management';
         $data['data'] = SubCategory::get();
@@ -39,6 +41,46 @@ class SubCategoryController extends Controller
         $sub_category->category_id = $request->category;
         $sub_category->status = $request->status;
         $sub_category->save();
+
+        $details = ($id == 0) ? new Detail : Detail::where('subcategory_id',$id)->first();
+        $details->subcategory_id = $sub_category->id;
+        $details->short_description = $request->short_description;
+        $details->overview = $request->overview;
+        $itinerary = array();
+        $i = 0;
+
+         foreach($request->day_detail as $key=>$val)
+            {
+                if(!empty($val)) {
+                    $day = $request->day[$key];
+                    $day_detail = $request->day_detail[$key];
+                    $itinerary[$i]["day"] = $day;
+                    $itinerary[$i]["detail"] = $day_detail;
+                    $i++;
+                }
+            }
+
+        $details->itinerary = json_encode($itinerary);
+
+        if($request->hasfile('image')) {
+            $img_ext_id = 0;
+            foreach($request->image as $image)
+            {
+
+                $ext  = strtolower($image->getClientOriginalExtension());
+                if($ext == "png" || $ext == "jpg" || $ext == "jpeg" ) {
+                    $filename = $sub_category->id.$img_ext_id.".".$ext;
+                    $image->move(public_path().'/uploads/gallery/', $filename);
+                    $image_array[$img_ext_id] = $filename;  
+                    $img_ext_id++;  
+                }
+            }
+        }
+
+        if(isset($image_array)) {
+            $details->images = json_encode($image_array);
+        }
+        $details->save();
         return redirect(route('admin.sub_category'));
     }
 }
