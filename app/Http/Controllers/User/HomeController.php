@@ -22,40 +22,18 @@ class HomeController extends BaseController
     	return view('users.pages.home', $data);
     }
 
-    public function product(Request $request, $id) {
-        $product = $data['product'] = DB::table('products')->where('id',$request->id)->first();
-        $data['category'] = DB::table('categories')->where('id',$product->category_id)->first();
-        $data['sub_category'] = DB::table('sub_categories')->where('id',$product->sub_category_id)->first();
-    	$data['title'] = $product->name;
-    	return view('users.pages.product', $data);
+    public function places(Request $request, $id) {
+        $sub_category = $data['sub_category'] = DB::table('sub_categories')->where('id',$request->id)->first();
+        $places = $data['places'] = DB::table('details')->where('subcategory_id', $request->id)->first();
+    	$data['title'] = $sub_category->name;
+        $itinerary = $data['itinerary'] = json_decode($places->itinerary);
+        $last_itinerary = end($itinerary);
+        $data['total_days'] = $last_itinerary->day;
+    	return view('users.pages.places', $data);
     }
 
     public function categoryProduct(Request $request, $id) {
-        $cat = $request->cat;
-        if($cat == "sub"){
-            $title = DB::table('sub_categories')->where('id',$request->id)->first();
-            $data['title'] = $title->name;
-            $data['count'] = DB::table('products')->where('sub_category_id',$request->id)->where('status','1')->count();
-            $data['products'] = DB::table('products')->where('sub_category_id',$request->id)->where('status','1')->get();
-        } else {
-            $title = DB::table('categories')->where('id',$request->id)->first();
-            $data['title'] = $title->name;
-        }
-        
-    	return view('users.pages.category', $data);
-    }
-
-    public function addtoCart(Request $request) {
-        $id = $request->id;
-        $item = $request->item;
-        $session_id = Session::getId();
-        $cart = new Cart;
-        $cart->product_id = $id;
-        $cart->item = $item;
-        $cart->session_id = $session_id;
-        $cart->status = $request->status;      
-        $cart->save();
-        return redirect()->back()->with('success', ['Item added to the cart']);
+       
     }
 
     

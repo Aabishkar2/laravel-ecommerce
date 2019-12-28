@@ -12,9 +12,7 @@
 */
 
 Route::any('/', 'User\HomeController@index')->name('user.home');
-Route::any('/shop/product/{id}', 'User\HomeController@product')->name('user.product');
-Route::any('/shop/{cat}/{id}', 'User\HomeController@categoryProduct')->name('user.category');
-Route::any('/product/addtocart', 'User\HomeController@addtoCart')->name('user.product.cart');
+Route::any('/places/{id}', 'User\HomeController@places')->name('user.places');
 
 
 // Route::get('/home', 'HomeController@index')->name('home');

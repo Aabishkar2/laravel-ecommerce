@@ -1382,10 +1382,11 @@ hr.dark {
   margin: 10px auto 40px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2em;
+  font-style: italic;
   line-height: 1.5;
   text-align: center;
   max-width: 600px;
-  font-weight: 200;
+  font-weight: 400;
 }
 .full-height .main-image-txt,
 .carousel-caption {
@@ -4853,6 +4854,7 @@ ul.checklist [type="radio"] {
   padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
+  min-height: 30rem;
 }
 .paper-effect:before,
 .paper-effect:after {
