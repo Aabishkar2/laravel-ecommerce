@@ -8,6 +8,10 @@
 		.banner-image {
 			    background-image: url("{{ asset('assets/img/coast/everest.jpg') }}") 
 		}
+		.showcase-bg {
+			background: url("{{ asset('assets/img/worldmap.png') }}"); 
+			background-size: cover;
+		}
 </style>
 <script src="{{ asset('vendor/js-cookie/src/js.cookie.js') }}"></script>
 

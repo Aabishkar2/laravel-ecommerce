@@ -15,7 +15,8 @@
         @include('users/includes/header')
         @include('users/includes/places/tripdetailbanner')
         @include('users/includes/places/section')
-         @include('users/includes/places/tripoverview')
+        @include('users/includes/places/tripoverview')
+        @include('users/includes/footer')
         @include('users/includes/scripts')
     </body> 
     <script src=""></script>

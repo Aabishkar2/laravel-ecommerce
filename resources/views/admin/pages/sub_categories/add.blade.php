@@ -58,13 +58,13 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="form-group">
                                             <label for="ccnumber">Name</label>
                                             <input class="form-control" name="name" maxlength="50" type="text" value="{{ @$data_value->name }}" required>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="form-group">
                                             <label for="ccnumber">Category</label>
                                             <select class="form-control" name="category" required>
@@ -75,12 +75,21 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="form-group">
                                             <label for="ccnumber">Status</label>
                                             <select class="form-control" name="status" required>
                                                 <option value="1" @if(@$data_value->status == 1) selected @endif>Active</option>
                                                 <option value="0" @if(@$data_value->status == 0) selected @endif>Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="ccnumber">Featured</label>
+                                            <select class="form-control" name="featured" required>
+                                                <option value="1" @if(@$data_value->featured == 1) selected @endif>Yes</option>
+                                                <option value="0" @if(@$data_value->featured == 0) selected @endif>No</option>
                                             </select>
                                         </div>
                                     </div>
@@ -103,6 +112,17 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="ccnumber">Main Image</label>
+                                            <input name="main_image" type="file" class="form-control" value=""/>
+                                            <p style="margin-left: 15px; margin-top: 5px; font-size: 12px;">Please select large size image</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="form-group">

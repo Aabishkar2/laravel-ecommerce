@@ -40,59 +40,56 @@
 							<div class="row">
 								<div class="col-sm-6">
 									<ul class="media-list review-comment"> 
+										@foreach($reviews as $review)
 										<li class="media"> 
 											<div class="media-left"> 
 												<a href="#"><img src="assets/img/team/1-sm.jpg" class="media-object" alt=""></a> 
 											</div> 
 											<div class="media-body"> 
-												<h4 class="media-heading">Kim L. Burney</h4> 
+												<h4 class="media-heading">{{ @$review->full_name }}</h4> 
 												<div class="rating">
-													<span class="icon-star"></span>
-													<span class="icon-star"></span>
-													<span class="icon-star"></span>
-													<span class="icon-star"></span>
-													<span class="icon-star-empty"></span>
+													@for($i=0;$i<$review->rating;$i++)
+														<span class="icon-star"></span>
+													@endfor
 												</div>
-												<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>  
+												<p>{{ @$review->comment }}</p>  
 											</div> 
 										</li> 
-										<li class="media"> 
-											<div class="media-left"> 
-												<a href="#"><img src="assets/img/team/2-sm.jpg" class="media-object" alt=""></a>
-											</div> 
-											<div class="media-body"> 
-												<h4 class="media-heading">Shing Ch'in</h4> 
-												<div class="rating">
-													<span class="icon-star"></span>
-													<span class="icon-star"></span>
-													<span class="icon-star"></span>
-													<span class="icon-star"></span>
-													<span class="icon-star-empty"></span>
-												</div>
-												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
-											</div> 
-										</li> 
+										@endforeach
 									</ul>
 								</div>
 								<div class="col-sm-6">
-									<div class="add-comment">
-										<div class="border-box">
-											<div class="box-title">Leave a Review</div>
-											<div class="form-group">
-												<label>Full Name</label>
-												<input type="text" class="form-control">
-											</div>
-											<div class="form-group">
-												<label>Email Address</label>
-												<input type="text" class="form-control">
-											</div>
-											<div class="form-group">
-												<label>Add Comment</label>
-												<textarea class="form-control" rows="6">Comment</textarea>
-												<button class="btn btn-primary">Add Comment</button>
+									<form action="{{ route('user.reviews') }}">
+										<div class="add-comment">
+											<div class="border-box">
+												<div class="box-title">Leave a Review</div>
+												<div class="form-group">
+													<label>Full Name</label>
+													<input type="text" name="full_name" maxlength="50" class="form-control">
+												</div>
+												<div class="form-group">
+													<label>Email Address</label>
+													<input type="text" name="email" maxlength="50" class="form-control">
+												</div>
+												<div class="form-group">
+													<label>Rating</label>
+													<select class="form-control" name="rating">
+														<option value="5" class="form-control">5</option>
+														<option value="4" class="form-control">4</option>
+														<option value="3" class="form-control">3</option>
+														<option value="2" class="form-control">2</option>
+														<option value="1" class="form-control">1</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Add Comment</label>
+													<textarea class="form-control" name="comment" maxlength="500" placeholder="Comment" rows="6"></textarea>
+													<input type="hidden" name="subcategory_id" value="{{ @$places->subcategory_id }}">
+													<button type="submit" class="btn btn-primary">Add Comment</button>
+												</div>
 											</div>
 										</div>
-									</div>
+									</form>
 
 								</div>
 							</div>
@@ -103,6 +100,8 @@
 
 				</div>
 			</div>
+		</div>
+	</div>
 
 
 			<br>

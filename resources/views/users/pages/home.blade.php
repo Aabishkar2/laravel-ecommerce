@@ -16,6 +16,9 @@
         @include('users/includes/banner')
         @include('users/includes/search')
         @include('users/includes/homeafterbanner')
+        @include('users/includes/bannerbase')
+        @include('users/includes/featuredtrip')
+        @include('users/includes/footer')
         @include('users/includes/scripts')
     </body> 
     <script src="{{ asset('assets/js/min/home.min.js') }}"></script>

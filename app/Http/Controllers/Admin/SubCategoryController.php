@@ -46,6 +46,17 @@ class SubCategoryController extends Controller
         $details->subcategory_id = $sub_category->id;
         $details->short_description = $request->short_description;
         $details->overview = $request->overview;
+
+        if($request->has('main_image')) {
+            $file = $request->file('main_image');
+            $ext  = strtolower($file->getClientOriginalExtension());
+            if($ext == "png" || $ext == "jpg" || $ext == "jpeg") {
+                $filename = "main_image".$sub_category->id.".".$ext;
+                $file->move(public_path().'/uploads/gallery/main_image', $filename);
+                $details->main_image = $filename; 
+            }
+        }
+
         $itinerary = array();
         $i = 0;
 

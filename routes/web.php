@@ -13,6 +13,7 @@
 
 Route::any('/', 'User\HomeController@index')->name('user.home');
 Route::any('/places/{id}', 'User\HomeController@places')->name('user.places');
+Route::any('/reviews', 'User\HomeController@submitReviews')->name('user.reviews');
 
 
 // Route::get('/home', 'HomeController@index')->name('home');
