@@ -17,6 +17,11 @@
               <i class="nav-icon fa fa-users"></i>Sub Categories
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('admin.cms') }}">
+              <i class="nav-icon fa fa-users"></i>CMS
+          </a>
+        </li>
         </ul>
     </nav>
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>

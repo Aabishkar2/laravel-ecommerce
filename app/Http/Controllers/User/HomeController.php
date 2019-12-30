@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Admin\SubCategory;
+use App\Models\Admin\Cms;
 use App\Models\User\Review;
 
 use Session;
@@ -18,7 +19,6 @@ class HomeController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(Request $request) {
-    	$data['title'] = "UPVC Home";
         $data['featured_places'] = DB::table('details')->where('featured','1')->get();
     	return view('users.pages.home', $data);
     }
@@ -47,6 +47,17 @@ class HomeController extends BaseController
         $review->comment = $request->comment;
         $review->save();
         return redirect()->back();
+    }
+
+    public function showContactPage(Request $request) {
+        $data['title'] = "Contact Us";
+        return view('users.pages.contact', $data);
+    }
+
+    public function showAboutPage(Request $request) {
+        $data['title'] = "About Us";
+        $data['content'] = Cms::where('nice_name','about-us')->first();
+        return view('users.pages.about', $data);
     }
 
     

@@ -1,9 +1,10 @@
+<?php $footer = DB::table('cms')->where('nice_name','footer-1')->first(); ?>
+
 <footer id="footer">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-7 col-md-3">
-				<h3>Mountain Journey Treks</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est eaque adipisci natus rerum laudantium accusamus magni.</p>
+				{!! @$footer->content !!}
 			</div>
 			<div class="col-sm-5 col-md-2">
 				

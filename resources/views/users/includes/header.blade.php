@@ -3,7 +3,11 @@
   $categories = DB::table('categories')->where('status','1')->get();
 ?>
 <header class="nav-menu fixed">
- <nav class="navbar normal transparent">
+  @if (\Request::is('contact') or \Request::is('about'))  
+    <nav class="navbar normal">
+  @else
+     <nav class="navbar normal transparent">
+  @endif
   <div class="container-fluid">
    <div class="navbar-header">
     <a class="navbar-brand" href="index.html">
@@ -37,7 +41,7 @@
           <a href="#">About Us</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="{{ route('user.contact') }}">Contact</a>
         </li>
       </ul> 
   </div>

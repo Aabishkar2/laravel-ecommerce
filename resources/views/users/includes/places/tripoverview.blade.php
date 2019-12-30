@@ -43,7 +43,7 @@
 										@foreach($reviews as $review)
 										<li class="media"> 
 											<div class="media-left"> 
-												<a href="#"><img src="assets/img/team/1-sm.jpg" class="media-object" alt=""></a> 
+												<a href="#"><img src="{{ asset('assets/img/team/1-sm.jpg') }}" class="media-object" alt=""></a> 
 											</div> 
 											<div class="media-body"> 
 												<h4 class="media-heading">{{ @$review->full_name }}</h4> 
